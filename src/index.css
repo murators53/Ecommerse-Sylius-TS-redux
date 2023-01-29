@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        letter-spacing: -0.5px;
+    }
+    .font-yellow {
+        @apply bg-[#FFEA20]        
+    }
+    .toggle-menu {
+        @apply rounded-sm uppercase w-auto p-2  flex-col   hidden group-hover:flex  bg-white absolute
+    }
+    .card {
+        @apply w-[200px] shadow-lg p-2 rounded  m-2 
+    }
+    .img{
+        @apply h-full w-full bg-red-600  rounded object-cover
+    }
+    .arrow-button {
+        @apply bg-slate-500 rounded m-2 p-2
+    }
+    .loading {
+        @apply fixed z-50 bg-black w-full h-full  bg-[#00000022] hidden
+    }
+    .loading img {
+        @apply absolute left-[50%] top-[30%] w-[64px]
+    }
+    .loading.active {
+        @apply block 
+    }
 }
